@@ -1,0 +1,14 @@
+Commands
+
+Commands which is used in this video
+npx playwright --help
+npx playwright test --help
+npx playwright test ./tests/sample.spec.js
+npx playwright test ./tests/sample.spec.js --headed
+npx playwright test ./tests/sample.spec.js --project=chromium
+npx playwright test ./tests/sample.spec.js --project="Google Chrome"
+npx playwright test ./tests/sample.spec.js --project="Google Chrome" --headed
+npx playwright test ./tests/sample.spec.js ./tests/verifyErrorMessage.spec.js  --headed
+npx playwright test sample
+npx playwright test -g "My First Test"
+npx playwright test
