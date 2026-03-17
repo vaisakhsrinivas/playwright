@@ -9,16 +9,21 @@ playwright/
 │   ├── jobcompass_testdata.json
 │   └── testdata.json
 ├── pages/
-│   ├── loginpage.js
-│   ├── logoutpage.js
-│   └── jobcompassloginpage.js
+│   ├── adhocpages/
+│   │   ├── loginpage.js
+│   │   └── logoutpage.js
+│   └── jobcompass/
+│       ├── jobcompassloginpage.js
+│       └── jobcompasslogoutpage.js
 ├── tests/
 │   ├── addingdatausingjsonfile.spec.js
+│   ├── datadrivenjobcompasslogintest.spec.js
 │   ├── datadrivenlogintest.spec.js
 │   ├── dropdown.spec.js
 │   ├── errorverification.spec.js
 │   ├── example.spec.js
 │   ├── firstplaywrighttest.spec.js
+│   ├── loginandlogoutjobcompasspage.spec.js
 │   ├── loginandlogoutpage.spec.js
 │   ├── loginlogout.spec.js
 │   ├── mouseover.spec.js
@@ -29,10 +34,15 @@ playwright/
 │   ├── index.html
 │   └── data/
 ├── test-results/
+├── .git/
+├── .gitignore
+├── node_modules/
 ├── Commands.txt
+├── README.md
 ├── package.json
+├── package-lock.json
 ├── playwright.config.js
-└── README.md
+└── npm-path.rtf
 ```
 
 ## Page Object Model Architecture
