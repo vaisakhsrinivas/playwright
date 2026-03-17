@@ -10,4 +10,4 @@ node_modules/
 playwright/screenshots/
 playwright/videos/
 playwright/traces/
-./data/jobcompass_testdata.json ./data/testdata.json
+/data/
