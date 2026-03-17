@@ -1,6 +1,6 @@
 const {test, expect} = require("@playwright/test")
-const LoginPage = require("../pages/jobcompassloginpage")
-const LogoutPage = require("../pages/jobcompasslogoutpage")
+const LoginPage = require("../pages/jobcompass/jobcompassloginpage")
+const LogoutPage = require("../pages/jobcompass/jobcompasslogoutpage")
 const testData = JSON.parse(JSON.stringify(require('../data/jobcompass_testdata.json')));
 
 test.describe("Login and Logout",()=>{

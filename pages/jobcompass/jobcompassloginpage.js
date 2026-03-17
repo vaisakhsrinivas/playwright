@@ -1,5 +1,5 @@
 
-const testData = JSON.parse(JSON.stringify(require('../data/jobcompass_testdata.json')));
+const testData = JSON.parse(JSON.stringify(require('../../data/jobcompass_testdata.json')));
 
 class loginPage
 {
