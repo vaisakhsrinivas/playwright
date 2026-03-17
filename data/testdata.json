@@ -1,0 +1,17 @@
+[
+    {
+        "username": "test_user",
+        "email": "test@example.com",
+        "password": "securepassword123",
+        "wrongemail": "wrong@example.com",
+        "wrongpassword": "wrongpassword"
+    },
+    {
+        "email": "test1@example.com",
+        "password": "securepassword123"
+    },
+    {
+        "email": "test2@example.com",
+        "password": "securepassword123"
+    }
+]
