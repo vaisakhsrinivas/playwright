@@ -1,16 +1,11 @@
 class logoutPage {
     constructor(page) {
         this.page = page;
-        //this.logoutButton = page.locator("text=Logout");
-        this.logoutButton = this.page.locator("//*[contains(@class,'signout')]");
+        this.logoutButton = this.page.locator('button:has-text("Sign Out")');
     }
     async logout()
     {
-        //const logoutButton = this.page.locator('a.button.secondary.radius');
-        //xPath
-        //const logoutButton = this.page.locator("//*[contains(@class,'signout')]");
         await this.logoutButton.click();
-        //await this.page.pause();
     }
 }
 
