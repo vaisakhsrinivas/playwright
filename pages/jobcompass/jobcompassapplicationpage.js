@@ -17,6 +17,7 @@ class applicationPage {
         await this.page.locator('input[name=job_url]').fill(jobUrl);
         await this.page.locator('textarea[name=notes]').fill(notes);
         await this.page.locator('button[type="submit"]').click();
+        await this.page.getByPlaceholder('Search company or position').fill(jobTitle);
 
     }
     }
