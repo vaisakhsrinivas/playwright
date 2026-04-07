@@ -10,7 +10,7 @@ test.describe('Data Driven Login Tests', function () {
                 await page.locator('#password').fill(dataSet.password);
                 await page.click('button[type="submit"]');
 
-                if (page.locator('button:has-text("Dashboard")').isVisible()) {
+                if (await page.locator('button:has-text("Dashboard")').isVisible()) {
                     await expect(page).toHaveURL(dataSet.dashboardUrl);
                 } else {
                     const errorMessage = await page.locator('.errorMessage').textContent();

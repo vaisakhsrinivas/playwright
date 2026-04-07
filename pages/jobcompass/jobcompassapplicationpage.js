@@ -1,15 +1,15 @@
-class applicationPage {
+class JobCompassApplicationPage {
     constructor(page) {
         this.page = page;
-        this.addApplication = this.page.locator('button:has-text("Add Application")');
+        this.jobCompassAddApplication = this.page.locator('button:has-text("Add Application")');
     }
 
-    async add_application() {
-        await this.addApplication.click();
+    async addApplication() {
+        await this.jobCompassAddApplication.click();
     }
 
-    async add_application_with_details(jobTitle, companyName, jobLocation, salaryRange, jobUrl, notes) {
-        await this.addApplication.click();
+    async addApplicationWithDetails(jobTitle, companyName, jobLocation, salaryRange, jobUrl, notes) {
+        await this.jobCompassAddApplication.click();
         await this.page.getByPlaceholder('Google').fill(companyName);
         await this.page.locator('input[name=position]').fill(jobTitle);
         await this.page.locator('input[name=location]').fill(jobLocation);
@@ -22,4 +22,4 @@ class applicationPage {
     }
     }
 
-module.exports = { applicationPage };
+module.exports = JobCompassApplicationPage;
