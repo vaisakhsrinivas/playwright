@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class DashboardPage {
+class JobCompassDashboardPage {
     constructor(page) {
         this.page = page;
         this.dashboardTitle = this.page.locator('h1:has-text("Dashboard")');
@@ -10,4 +10,5 @@ class DashboardPage {
         await expect(this.dashboardTitle).toHaveText("Dashboard");
     }
 }
-module.exports = DashboardPage;
+
+module.exports = JobCompassDashboardPage;
