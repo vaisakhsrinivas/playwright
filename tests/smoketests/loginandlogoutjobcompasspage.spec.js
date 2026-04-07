@@ -1,6 +1,6 @@
 const {test, expect} = require("@playwright/test")
-const LoginPage = require("../../pages/jobcompass/jobcompassloginpage")
-const LogoutPage = require("../../pages/jobcompass/jobcompasslogoutpage")
+const LoginPage = require("../../pages/jobcompass/JobCompassLoginPage")
+const LogoutPage = require("../../pages/jobcompass/JobCompassLogoutPage")
 const testData = JSON.parse(JSON.stringify(require('../../data/jobcompass_testdata.json')));
 
 test.describe("Login and Logout",()=>{
@@ -9,8 +9,8 @@ test.describe("Login and Logout",()=>{
     })*/
 
     test("Valid Login Test", async ({page})=>{
-        const loginPage = new LoginPage.loginPage(page)
-        await loginPage.goto()
+        const loginPage = new LoginPage(page)
+        await loginPage.goto(testData[0].url);
         await loginPage.login(testData[0].email,testData[0].password)
         await expect(page).toHaveURL(testData[0].dashboardUrl)
     }
@@ -26,14 +26,12 @@ test.only("Invalid Login Test", async ({page})=>{
 })*/
 
     test("Logout Test", async ({page})=>{
-        const loginPage = new LoginPage.loginPage(page)
-        await loginPage.goto()
+        const loginPage = new LoginPage(page)
+        await loginPage.goto(testData[0].url);
         await loginPage.login(testData[0].email,testData[0].password)
-        const logoutPage = new LogoutPage.logoutPage(page)
+        const logoutPage = new LogoutPage(page)
         await logoutPage.logout()
-        const logoutMessage = await page.getByText("Welcome back").textContent()
         await expect(page.getByText("Welcome back")).toBeVisible()
-        expect (logoutMessage).toContain("Welcome back")
         await expect(page).toHaveURL(testData[0].url)
     })
 })

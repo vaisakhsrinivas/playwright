@@ -1,7 +1,4 @@
-
-const testData = JSON.parse(JSON.stringify(require('../../data/jobcompass_testdata.json')));
-
-class loginPage
+class JobCompassLoginPage
 {
     constructor(page)
     {
@@ -11,9 +8,9 @@ class loginPage
         this.loginButton = page.locator('button[type="submit"]');
     }
 
-    async goto()
+    async goto(url)
     {
-        await this.page.goto(testData[0].url);
+        await this.page.goto(url);
     }
 
     async login(email, password)
@@ -24,4 +21,4 @@ class loginPage
     }
 }
 
-module.exports = { loginPage };
+module.exports = JobCompassLoginPage;

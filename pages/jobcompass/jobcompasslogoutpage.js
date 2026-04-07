@@ -1,4 +1,4 @@
-class logoutPage {
+class JobCompassLogoutPage {
     constructor(page) {
         this.page = page;
         this.logoutButton = this.page.locator('button:has-text("Sign Out")');
@@ -9,4 +9,4 @@ class logoutPage {
     }
 }
 
-module.exports = { logoutPage };
+module.exports = JobCompassLogoutPage;
