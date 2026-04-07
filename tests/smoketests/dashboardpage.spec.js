@@ -1,5 +1,5 @@
-const {test, expect} = require('@playwright/test');
-const DashboardPage = require('../../pages/jobcompass/DashboardPage');
+const {test} = require('@playwright/test');
+const JobCompassDashboardPage = require('../../pages/jobcompass/JobCompassDashboardPage');
 const LoginPage = require('../../pages/jobcompass/JobCompassLoginPage');
 const testData = JSON.parse(JSON.stringify(require('../../data/jobcompass_testdata.json')));
 
@@ -8,7 +8,7 @@ test.describe('Dashboard Page', () => {
         const loginPage = new LoginPage(page);
         await loginPage.goto(testData[0].url);
         await loginPage.login(testData[0].email, testData[0].password);
-        const dashboardPage = new DashboardPage(page);
+        const dashboardPage = new JobCompassDashboardPage(page);
         await dashboardPage.verifyDashboardTitle();
     });
 });
