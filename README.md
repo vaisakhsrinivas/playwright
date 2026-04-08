@@ -1,70 +1,86 @@
 # playwright
-Repository contains all code learnings and practices with playwright
 
-## Project Structure
+Repository for Playwright learnings and practice projects.
+
+## Project structure
 
 ```
 playwright/
 ├── data/
-│   ├── jobcompass_testdata.json
+│   ├── jobcompass_testdata.json    # URLs, credentials, application fixtures (Job Compass)
 │   └── testdata.json
 ├── pages/
-│   ├── adhocpages/
+│   ├── adhocpages/                 # Generic demo pages (e.g. the-internet, OrangeHRM)
 │   │   ├── loginpage.js
 │   │   └── logoutpage.js
-│   └── jobcompass/
-│       ├── jobcompassloginpage.js
-│       └── jobcompasslogoutpage.js
+│   └── jobcompass/                 # Job Compass app — Page Object Model
+│       ├── JobCompassLoginPage.js
+│       ├── JobCompassLogoutPage.js
+│       ├── JobCompassApplicationPage.js
+│       └── JobCompassDashboardPage.js
 ├── tests/
-│   ├── addingdatausingjsonfile.spec.js
-│   ├── datadrivenjobcompasslogintest.spec.js
-│   ├── datadrivenlogintest.spec.js
-│   ├── dropdown.spec.js
-│   ├── errorverification.spec.js
-│   ├── example.spec.js
-│   ├── firstplaywrighttest.spec.js
-│   ├── loginandlogoutjobcompasspage.spec.js
-│   ├── loginandlogoutpage.spec.js
-│   ├── loginlogout.spec.js
-│   ├── mouseover.spec.js
-│   ├── uploadfile.spec.js
-│   └── resources/
-│       └── samplefile.txt
+│   ├── smoketests/                 # Job Compass smoke flows
+│   │   ├── dashboardpage.spec.js
+│   │   ├── addapplication.spec.js
+│   │   └── loginandlogoutjobcompasspage.spec.js
+│   ├── resources/
+│   │   └── samplefile.txt
+│   ├── *.spec.js                   # Other learning / demo specs
+│   └── datadrivenjobcompasslogintest.spec.js
 ├── playwright-report/
-│   ├── index.html
-│   └── data/
 ├── test-results/
-├── .git/
-├── .gitignore
-├── node_modules/
-├── Commands.txt
-├── README.md
+├── playwright.config.js            # ESM (`import` / `export default`)
 ├── package.json
 ├── package-lock.json
-├── playwright.config.js
-└── npm-path.rtf
+└── README.md
 ```
 
-## Page Object Model Architecture
+## Job Compass — Page Object conventions
 
-The project follows the Page Object Model (POM) design pattern, which promotes better test maintenance and reduces code duplication by encapsulating page-specific logic into dedicated classes.
+- **One class per file**, **default export**: `module.exports = JobCompassLoginPage` (and the same pattern for other pages). Specs use `const LoginPage = require('...'); new LoginPage(page)`.
+- **PascalCase** filenames match the class name (e.g. `JobCompassDashboardPage.js`) to avoid case-sensitivity issues on Linux/CI and in the TypeScript/JS language service on macOS.
+- **Navigation**: `JobCompassLoginPage.goto(url)` takes the URL from the test (typically `testData[0].url` from JSON), not hard-coded inside the page object.
+- **Locators vs methods**: avoid giving a locator the same name as a method (e.g. use `jobCompassAddApplication` for the button locator and `addApplication()` for the click action).
+- **Assertions**: Job Compass dashboard checks can live in page helpers (e.g. `verifyDashboardTitle()`) or in specs; stay consistent as you add tests.
+
+## Running tests
+
+From the `playwright` directory:
+
+```bash
+npx playwright test
+```
+
+Job Compass smokes only:
+
+```bash
+npx playwright test tests/smoketests
+```
+
+Install browsers if needed:
+
+```bash
+npx playwright install
+```
+
+## Page Object Model (overview)
+
+Tests call page objects; page objects encapsulate selectors and actions (and optional verification helpers). Shared data lives under `data/` or environment variables for sensitive values.
 
 ```mermaid
 graph TD
-    A[Test Scripts] -->|Call methods| B[Page Objects]
-    B -->|Interact with| C[Web Elements]
-    A -->|Use| D[Test Data]
-    D -->|Provide input| B
-    B -->|Perform| E[Actions/Assertions]
-    E -->|Validate| F[Test Results]
+    A[Test scripts] -->|Call methods| B[Page objects]
+    B -->|Interact with| C[Web elements]
+    A -->|Read| D[Test data]
+    D -->|URLs / credentials / fixtures| A
+    B -->|Actions / assertions| E[Behavior under test]
 ```
 
-## Tech Stack
+## Tech stack
 
-- **Node.js**: JavaScript runtime environment for executing the tests.
-- **Playwright**: End-to-end testing framework for web applications, supporting multiple browsers.
-- **JavaScript**: Programming language used for writing test scripts and page objects.
-- **JSON**: Data format for storing test data (e.g., login credentials).
-- **HTML**: Format for generating test reports via Playwright's built-in reporter.
-- **CommonJS**: Module system used for importing/exporting code (e.g., require/module.exports).
-
+- **Node.js** — runtime
+- **@playwright/test** — test runner and browser automation
+- **JavaScript** — specs and page objects use **CommonJS** (`require` / `module.exports`)
+- **playwright.config.js** — **ESM** (`import` / `export default`), as supported by Playwright
+- **JSON** — structured test data
+- **HTML** — Playwright HTML reporter output under `playwright-report/`
