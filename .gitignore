@@ -1,13 +1,19 @@
-
-# Playwright
+# Dependencies
 node_modules/
+
+# Playwright — reports and artifacts (regenerated on each run)
 /test-results/
 /playwright-report/
 /blob-report/
-/playwright/.cache/
-/playwright/.auth/
-/playwright/data/
-playwright/screenshots/
-playwright/videos/
-playwright/traces/
+
+# Saved auth session (e.g. storageState from an auth setup project)
+# https://playwright.dev/docs/auth
+.auth/
+
+# Local secrets
+.env
+.env.local
+.env.*.local
+
+# Test data (ignored for now — remove when you want JSON fixtures in git)
 /data/
