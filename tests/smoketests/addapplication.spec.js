@@ -7,9 +7,9 @@ test.describe('Add Application', () => {
         // No login needed - already authenticated
         const applicationPage = new ApplicationPage(page);
 
-        await page.goto('https://job-seeker-buddy-40.lovable.app');
+        await page.goto(testData[0].dashboardUrl);
         await applicationPage.addApplication();
-        await expect(page).toHaveURL('https://job-seeker-buddy-40.lovable.app/add');
+        await expect(page).toHaveURL(testData[0].applicationUrl);
         await expect(page.getByText(testData[0].newapplicationlabel)).toBeVisible();
         await expect(page.getByText(testData[0].newapplicationlabel)).toHaveText(testData[0].newapplicationlabel);
     });
@@ -18,7 +18,7 @@ test.describe('Add Application', () => {
         // No login needed - already authenticated
         const applicationPage = new ApplicationPage(page);
 
-        await page.goto('https://job-seeker-buddy-40.lovable.app');
+        await page.goto(testData[0].dashboardUrl);
         const initialCount = parseInt(await page.locator('p:near(:text("Total Applications"))').textContent());
         console.log('Initial application count:', initialCount);
         const title = testData[1].jobTitle + '-' + generateRandomNumber();
