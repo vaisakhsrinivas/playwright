@@ -17,9 +17,9 @@ module.exports = async (config) => {
     await page.waitForLoadState('networkidle');
     
     // Save session for smoke tests
-    await page.context().storageState({ path: 'smoketest-auth.json' });
+    await page.context().storageState({ path: '.auth/smoketest.json' });
     
-    console.log('✅ Smoke test session created: smoketest-auth.json');
+    console.log('✅ Smoke test session created: .auth/smoketest.json');
   } catch (error) {
     console.error('❌ Failed to create smoke test session:', error.message);
     throw error;

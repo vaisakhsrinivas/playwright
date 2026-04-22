@@ -15,7 +15,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
     
     // Load shared session for all smoke tests
-    storageState: 'smoketest-auth.json'
+    storageState: '.auth/smoketest.json'
   },
   
   projects: [
