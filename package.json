@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "login.spec.js",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "smoke": "npx playwright test --config tests/smoketests/smoke.config.js",
+    "smoke:report": "npx playwright test --config tests/smoketests/smoke.config.js && npx playwright show-report"
+  },
   "author": "",
   "license": "ISC",
   "type": "commonjs",

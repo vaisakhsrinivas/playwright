@@ -48,14 +48,29 @@ playwright/
 From the `playwright` directory:
 
 ```bash
+# All tests
 npx playwright test
+
+# Job Compass smoke tests (recommended)
+npm run smoke
+
+# Job Compass smoke tests with browser visible
+npm run smoke -- --headed
+
+# Job Compass smoke tests and open report
+npm run smoke:report
 ```
 
-Job Compass smokes only:
+### Authentication setup
 
-```bash
-npx playwright test tests/smoketests
-```
+Smoke tests require a valid authenticated session stored in `smoketest-auth.json`. The `smoketest.setup.js` global setup script automatically:
+1. Launches a browser
+2. Logs in with credentials from `data/jobcompass_testdata.json`
+3. Saves the authenticated session state
+
+This runs **before every smoke test execution** when using the smoke config. The saved token refreshes automatically on each run, so you don't need to manually maintain it.
+
+**Important**: Always run smoke tests with the smoke config (`--config tests/smoketests/smoke.config.js` or `npm run smoke`) to ensure the setup runs. Running without it will fail if the token has expired.
 
 Install browsers if needed:
 

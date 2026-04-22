@@ -1,0 +1,33 @@
+{
+  "cookies": [
+    {
+      "name": "ph_phc_ApXNe7tdyHj9PV4uQ999GZPLNvb9JDHD5GYURcJatw6U_posthog",
+      "value": "%7B%22%24device_id%22%3A%22019db6a0-adac-7ea0-8bf6-01959537d626%22%2C%22distinct_id%22%3A%22d0f28e41-998a-499a-aa04-2771d6215049%22%2C%22%24epp%22%3Atrue%2C%22%24user_state%22%3A%22identified%22%7D",
+      "domain": ".job-seeker-buddy-40.lovable.app",
+      "path": "/",
+      "expires": 1808421477,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://job-seeker-buddy-40.lovable.app",
+      "localStorage": [
+        {
+          "name": "sb-dpwzgiednyxgtemmagrk-auth-token",
+          "value": "{\"access_token\":\"eyJhbGciOiJFUzI1NiIsImtpZCI6IjA4ZDg1OTAzLTdiODMtNDdhNC04ODU1LTM1MWY4ZWRiOTMzYyIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Rwd3pnaWVkbnl4Z3RlbW1hZ3JrLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJkMGYyOGU0MS05OThhLTQ5OWEtYWEwNC0yNzcxZDYyMTUwNDkiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzc2ODg5MDc3LCJpYXQiOjE3NzY4ODU0NzcsImVtYWlsIjoidmFpc2FraC5zcmluaXZhc0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoidmFpc2FraC5zcmluaXZhc0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZnVsbF9uYW1lIjoiVmFpc2FraCIsInBob25lX3ZlcmlmaWVkIjpmYWxzZSwic3ViIjoiZDBmMjhlNDEtOTk4YS00OTlhLWFhMDQtMjc3MWQ2MjE1MDQ5In0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NzY4ODU0Nzd9XSwic2Vzc2lvbl9pZCI6IjU0YWMzMzc1LWVjODItNGQ4YS05MGU1LTgwZWVhZGNkYzViOSIsImlzX2Fub255bW91cyI6ZmFsc2V9.MgHEeYCbrOdXdqTHiMbKSP69_giybvAUyIMpkd1YA9t_1whEUFp8DWAyoe3W9YzZn9mZJ1dyKS_kVxxwTtjl3A\",\"token_type\":\"bearer\",\"expires_in\":3600,\"expires_at\":1776889077,\"refresh_token\":\"ncifey3awg4c\",\"user\":{\"id\":\"d0f28e41-998a-499a-aa04-2771d6215049\",\"aud\":\"authenticated\",\"role\":\"authenticated\",\"email\":\"vaisakh.srinivas@gmail.com\",\"email_confirmed_at\":\"2026-03-09T21:37:17.733533Z\",\"phone\":\"\",\"confirmation_sent_at\":\"2026-03-09T21:36:50.321572Z\",\"confirmed_at\":\"2026-03-09T21:37:17.733533Z\",\"last_sign_in_at\":\"2026-04-22T19:17:57.394023351Z\",\"app_metadata\":{\"provider\":\"email\",\"providers\":[\"email\"]},\"user_metadata\":{\"email\":\"vaisakh.srinivas@gmail.com\",\"email_verified\":true,\"full_name\":\"Vaisakh\",\"phone_verified\":false,\"sub\":\"d0f28e41-998a-499a-aa04-2771d6215049\"},\"identities\":[{\"identity_id\":\"ce131373-675b-456a-9263-eddb011b6f07\",\"id\":\"d0f28e41-998a-499a-aa04-2771d6215049\",\"user_id\":\"d0f28e41-998a-499a-aa04-2771d6215049\",\"identity_data\":{\"email\":\"vaisakh.srinivas@gmail.com\",\"email_verified\":true,\"full_name\":\"Vaisakh\",\"phone_verified\":false,\"sub\":\"d0f28e41-998a-499a-aa04-2771d6215049\"},\"provider\":\"email\",\"last_sign_in_at\":\"2026-03-09T21:36:50.313703Z\",\"created_at\":\"2026-03-09T21:36:50.313758Z\",\"updated_at\":\"2026-03-09T21:36:50.313758Z\",\"email\":\"vaisakh.srinivas@gmail.com\"}],\"created_at\":\"2026-03-09T21:36:50.296298Z\",\"updated_at\":\"2026-04-22T19:17:57.420002Z\",\"is_anonymous\":false},\"weak_password\":{\"message\":\"Password should contain at least one character of each: abcdefghijklmnopqrstuvwxyz, ABCDEFGHIJKLMNOPQRSTUVWXYZ, 0123456789, !@#$%^&*()_+-=[]{};':\\\"|<>?,./`~. Password is known to be weak and easy to guess, please choose a different one.\",\"reasons\":[\"characters\",\"pwned\"]}}"
+        },
+        {
+          "name": "theme",
+          "value": "light"
+        },
+        {
+          "name": "ph_phc_ApXNe7tdyHj9PV4uQ999GZPLNvb9JDHD5GYURcJatw6U_posthog",
+          "value": "{\"$initialization_time\":\"2026-04-22T19:17:56.778Z\",\"$configured_session_timeout_ms\":1800000,\"distinct_id\":\"d0f28e41-998a-499a-aa04-2771d6215049\",\"$device_id\":\"019db6a0-adac-7ea0-8bf6-01959537d626\",\"$user_state\":\"identified\",\"$error_tracking_suppression_rules\":[],\"$session_recording_remote_config\":{\"cache_timestamp\":1776885476840,\"enabled\":false,\"networkPayloadCapture\":{\"capturePerformance\":{\"network_timing\":true,\"web_vitals\":false,\"web_vitals_allowed_metrics\":null}},\"canvasRecording\":{},\"sampleRate\":null,\"minimumDurationMilliseconds\":null},\"$autocapture_disabled_server_side\":false,\"$product_tours_enabled_server_side\":false,\"$heatmaps_enabled_server_side\":false,\"$web_vitals_enabled_server_side\":false,\"$web_vitals_allowed_metrics\":null,\"$exception_capture_enabled_server_side\":false,\"$dead_clicks_enabled_server_side\":false,\"$epp\":true,\"$user_id\":\"d0f28e41-998a-499a-aa04-2771d6215049\",\"$stored_person_properties\":{\"email\":\"vaisakh.srinivas@gmail.com\",\"name\":\"Vaisakh\"},\"$feature_flag_errors\":[],\"$active_feature_flags\":[],\"$enabled_feature_flags\":{},\"$feature_flag_payloads\":{},\"$feature_flag_details\":{},\"$feature_flag_request_id\":\"264a2763-8bad-41ed-95f8-7d88a04e129a\",\"$feature_flag_evaluated_at\":1776885477611}"
+        }
+      ]
+    }
+  ]
+}
