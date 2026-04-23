@@ -10,8 +10,9 @@ const path = require('path');
 // Create MCP server
 const server = new Server({
   name: 'playwright-mcp',
-  version: '1.0.0',
-});
+  version: '1.0.0'},
+  { capabilities: { tools: true } }
+);
 
 // Tool definitions
 const tools = [
@@ -69,11 +70,13 @@ const tools = [
 
 // Handle tool listing
 server.setRequestHandler(ListToolsRequestSchema, async () => {
+  console.error('[MCP] received tools/list request');
   return { tools };
 });
 
 // Handle tool calls
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  console.error('[MCP] received tools/call request:', JSON.stringify(request));
   const { name, arguments: args } = request;
 
   try {
@@ -229,4 +232,6 @@ async function main() {
   console.error('Playwright MCP server running on stdio');
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  console.error('[MCP] startup error:', error);
+});
