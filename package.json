@@ -5,12 +5,14 @@
   "main": "login.spec.js",
   "scripts": {
     "smoke": "npx playwright test --config tests/smoketests/smoke.config.js",
-    "smoke:report": "npx playwright test --config tests/smoketests/smoke.config.js && npx playwright show-report"
+    "smoke:report": "npx playwright test --config tests/smoketests/smoke.config.js && npx playwright show-report",
+    "mcp": "node mcp-server.js"
   },
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1"
   }

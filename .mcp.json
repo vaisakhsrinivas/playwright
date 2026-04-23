@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "node",
+      "args": ["mcp-server.js"],
+      "disabled": false,
+      "description": "Playwright test automation and analysis MCP server"
+    }
+  }
+}
