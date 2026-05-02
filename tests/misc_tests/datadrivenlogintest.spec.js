@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const testData = JSON.parse(JSON.stringify(require('../data/testdata.json')));
+const testData = JSON.parse(JSON.stringify(require('../../data/testdata.json')));
 
 test.describe('Data Driven Login Tests', function () {
     for (const dataSet of testData) {

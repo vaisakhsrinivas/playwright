@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const testData = JSON.parse(JSON.stringify(require('../data/testdata.json')));
+const testData = JSON.parse(JSON.stringify(require('../../data/testdata.json')));
 
 test.skip('Add Data Using JSON File', async ({ page }) => {
     await page.goto('https://freelance-learn-automation.vercel.app/login');

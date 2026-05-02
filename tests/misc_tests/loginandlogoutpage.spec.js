@@ -1,6 +1,6 @@
 const {test, expect} = require("@playwright/test")
-const LoginPage = require("../pages/adhocpages/loginpage")
-const LogoutPage = require("../pages/adhocpages/logoutpage")
+const LoginPage = require("../../pages/adhocpages/loginpage")
+const LogoutPage = require("../../pages/adhocpages/logoutpage")
 
 test.describe("Login and Logout",()=>{
     /*test.beforeEach(async ({page})=>{
