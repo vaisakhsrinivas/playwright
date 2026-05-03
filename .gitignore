@@ -15,5 +15,8 @@ node_modules/
 .env.local
 .env.*.local
 
+# Local editor settings
+.vscode/settings.json
+
 # Test data (ignored for now — remove when you want JSON fixtures in git)
 /data/
