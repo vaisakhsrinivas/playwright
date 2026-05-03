@@ -1,8 +1,4 @@
-const testdata = JSON.parse(JSON.stringify(require('../../data/swaglabs_testdata.json')));
-const url = testdata[0].url;    
-
-class loginpage {
-
+class SwagLabsLoginPage {
     constructor(page) {
         this.page = page;
         this.username = page.locator('#user-name');
@@ -10,7 +6,7 @@ class loginpage {
         this.loginButton = page.locator('input[type="submit"]');
     }
 
-    async goto() {
+    async goto(url) {
         await this.page.goto(url);
     }
 
@@ -19,6 +15,6 @@ class loginpage {
         await this.password.fill(password);
         await this.loginButton.click();
     }
-
 }
-module.exports = loginpage;
+
+module.exports = SwagLabsLoginPage;
